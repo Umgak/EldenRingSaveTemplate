@@ -24,10 +24,8 @@ int MAX_CHARACTER_COUNT = 10;
 
 // Recalculate checksum for active character slots
 for(i = 0; i < MAX_CHARACTER_COUNT; i++) {
-    if((ReadByte(active_slots_offset + i)) != 1)
-    {
-        continue;   
-    }
+    // Check that slot is active. If not, skip.
+    if((ReadByte(active_slots_offset + i)) != 1) continue;
     // Calculate the offset to the start of a character, skipping checksum bytes.
     offset = HEADER_SIZE + ((CHARACTER_FILE_SIZE + CHECKSUM_SIZE) * i); 
     // Move the cursor position to offset
