@@ -23,7 +23,7 @@ int USERDATA_10_SIZE = 0x60000;
 int MAX_CHARACTER_COUNT = 10;
 
 // Recalculate checksum for active character slots
-for(byte i = 0; i < MAX_CHARACTER_COUNT; i++) {
+for(i = 0; i < MAX_CHARACTER_COUNT; i++) {
     if((ReadByte(active_slots_offset + i)) != 1)
     {
         continue;   
